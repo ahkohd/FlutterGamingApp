@@ -43,6 +43,14 @@ flutter:
     - images/bg.jpg
     - images/00012.jpg
     - images/ahkohd.png
+    - images/apex-poster.jpg
+    - images/fortnite-poster.jpg
+    - images/overwatch-poster.jpg
+    - images/pubg-poster.jpg
+    - images/cod-poster.jpg
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

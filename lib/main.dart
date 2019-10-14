@@ -96,21 +96,17 @@ class GamesHome extends StatelessWidget {
           ),
           Container(
             child: TextField(
-              decoration: InputDecoration(
-                  hintText: 'Search for the game',
-                  hintStyle: TextStyle(
-                    color: Color(0xff96a8e0),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xff96a8e0), width: 2)
-                    ),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xff96a8e0),
-                      width: 2
-                    )),
-                  )),
+                decoration: InputDecoration(
+              hintText: 'Search for the game',
+              hintStyle: TextStyle(
+                color: Color(0xff96a8e0),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff96a8e0), width: 2)),
+              contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+              enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff96a8e0), width: 2)),
+            )),
             // padding: EdgeInsets.only(bottom: 10),
             width: MediaQuery.of(context).size.width / 1.32,
           )
@@ -119,62 +115,130 @@ class GamesHome extends StatelessWidget {
     );
   }
 
-  wall(context)
-  {
+  wall(context) {
     return Container(
-      height: 100,
+      height: 400,
       margin: EdgeInsets.only(top: 25),
-      padding: EdgeInsets.only(left: 15),
-      child: Row(
+      padding: EdgeInsets.only(left: 15, top: 30),
+      child: Column(
         children: <Widget>[
           section('Popular', 'categories', context),
           popularGamesList()
         ],
       ),
       decoration: BoxDecoration(
-        color: Color(0xff4b55ff),
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(50)
-        )
-      ),
+          color: Color(0xff4b55ff),
+          borderRadius: BorderRadius.only(topRight: Radius.circular(50))),
     );
   }
 
-  section(String name1, String name2, BuildContext context)
-  {
-    return  Row(
+  section(String name1, String name2, BuildContext context) {
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Row(
           children: <Widget>[
-            Text(name1, style: TextStyle(
-          color: Colors.white,
-          fontSize: 20
-        )),
-        Text(' '+name2, style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold
-        )),
+            Text(name1, style: TextStyle(color: Colors.white, fontSize: 20)),
+            Text(' ' + name2,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold)),
           ],
         ),
         Container(
           color: Color.fromRGBO(255, 255, 255, .3),
           height: 1,
           margin: EdgeInsets.only(top: 5, left: 10),
-          width: MediaQuery.of(context).size.width/2.2,
+          width: MediaQuery.of(context).size.width / 2.2,
         )
       ],
     );
-
   }
 
-  popularGamesList()
-  {
+  popularGamesList() {
     return Container(
-
+      child: Column(children: <Widget>[
+        SizedBox(
+          height: 300,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            children: <Widget>[
+              gameItem(250, 170, "Apex Legends", "257.3k viewers", "images/apex-poster.jpg"),
+              gameItem(250, 170, "Fortnite", "115.4k viewers", "images/fortnite-poster.jpg"),
+              gameItem(250, 170, "Overwatch", "80.7k viewers", "images/overwatch-poster.jpg"),
+              gameItem(250, 170, "PUBG", "20.8k viewers", "images/pubg-poster.jpg"),
+              gameItem(250, 170, "Call Of Duty Mobile", "10.2k viewers", "images/cod-poster.jpg"),
+            ],
+          ),
+        )
+      ]),
     );
   }
 
+  gameItem(double height, double width, String gameTitle, String views, String poster) {
+    return Container(
+      height: height,
+      width: width,
+      margin: EdgeInsets.only(right: 20, bottom: 25, top: 25),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+              width: width,
+              height: height - (height / 4.5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                  image: DecorationImage(
+                      image: AssetImage(poster),
+                      alignment: Alignment.center,
+                      fit: BoxFit.cover))),
+          Container(
+            margin: EdgeInsets.only(top: 8, left: 10),
+            child: Text(
+              gameTitle,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10, top: 3),
+            child: Row(
+              children: <Widget>[
+                Icon(
+                  Fryo.eye,
+                  color: Colors.white,
+                  size: 15,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Text(
+                    views,
+                    style: TextStyle(color: Color(0xffbdc8ff), fontSize: 12),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+      decoration: BoxDecoration(
+          color: Color(0xff516aff),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(0, 0),
+                blurRadius: 30,
+                spreadRadius: 5,
+                color: Color.fromRGBO(0, 0, 0, .05))
+          ]),
+    );
+  }
 }
