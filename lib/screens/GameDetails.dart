@@ -37,56 +37,73 @@ class GameDetails extends StatelessWidget {
       sliver: new SliverList(
         delegate: new SliverChildListDelegate([
           Container(
-              padding: EdgeInsets.only(top: 20),
-              color: Color(0xff010023),
-              child: Column(
-                children: <Widget>[
-                  section("      Live", "Channels", context),
-                  Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: MediaQuery.of(context).size.height - 143,
-                      child: ListView(
-                        children: <Widget>[
-                          videoItem(
-                              context: context,
-                              title: "Season 4 Trailer",
-                              views: "53.8k",
-                              poster: "images/apex-5.jpg",
-                              author: "Victor Aremu",
-                              avatar: "images/ahkohd.png"),
-                          videoItem(
-                              context: context,
-                              title: "Blood Hunt and Void Charm",
-                              views: "25.6k",
-                              poster: "images/apex-4.jpg",
-                              author: "David Adeleke",
-                              avatar: "images/d.jpg"),
-                          videoItem(
-                              context: context,
-                              title: "The Best Champs In Apex Legends",
-                              views: "20.8k",
-                              poster: "images/apex-3.jpg",
-                              author: "Ninja",
-                              avatar: "images/ninja.jpg"),
-                          videoItem(
-                              context: context,
-                              title: "Wining Apex Legends World Cup",
-                              views: "13.2k",
-                              poster: "images/apex-2.jpg",
-                              author: "Juega",
-                              avatar: "images/juega.jpg"),
-                          videoItem(
-                              context: context,
-                              title: "Hijacked squads enroute to El Chapo",
-                              views: "8.3k",
-                              poster: "images/apex-1.jpg",
-                              author: "Victor Aremu",
-                              avatar: "images/ahkohd.png")
-                        ],
-                      ))
-                ],
-              ),
-              height: MediaQuery.of(context).size.height - 80)
+            padding: EdgeInsets.only(top: 60),
+            color: Color(0xff010023),
+            child: Column(
+              children: <Widget>[
+                section("      Live", "Channels", context),
+                Wrap(
+                  children: <Widget>[
+                    Container(
+                        margin: EdgeInsets.only(top: 20),
+                        child: Column(
+                          children: <Widget>[
+                            videoItem(
+                                context: context,
+                                title: "Season 4 Trailer",
+                                views: "53.8k",
+                                poster: "images/apex-5.jpg",
+                                author: "Victor Aremu",
+                                avatar: "images/ahkohd.png"),
+                            videoItem(
+                                context: context,
+                                title: "Blood Hunt and Void Charm",
+                                views: "25.6k",
+                                poster: "images/apex-4.jpg",
+                                author: "David Adeleke",
+                                avatar: "images/d.jpg"),
+                            videoItem(
+                                context: context,
+                                title: "The Best Champs In Apex Legends",
+                                views: "20.8k",
+                                poster: "images/apex-3.jpg",
+                                author: "Ninja",
+                                avatar: "images/ninja.jpg"),
+                            videoItem(
+                                context: context,
+                                title: "Wining Apex Legends World Cup",
+                                views: "13.2k",
+                                poster: "images/apex-2.jpg",
+                                author: "Juega",
+                                avatar: "images/juega.jpg"),
+                            videoItem(
+                                context: context,
+                                title: "Hijacked squads enroute to El Chapo",
+                                views: "8.3k",
+                                poster: "images/apex-1.jpg",
+                                author: "Victor Aremu",
+                                avatar: "images/ahkohd.png"),
+                            videoItem(
+                                context: context,
+                                title: "Fortnite Shoot out 45 kills",
+                                views: "7.6k",
+                                poster: "images/fortnite-channel.png",
+                                author: "Ninja",
+                                avatar: "images/ninja.jpg"),
+                            videoItem(
+                                context: context,
+                                title: "Apex Season 3 Finale",
+                                views: "6.3k",
+                                poster: "images/apex-channel.jpg",
+                                author: "David Adeleke",
+                                avatar: "images/d.jpg")
+                          ],
+                        ))
+                  ],
+                )
+              ],
+            ),
+          )
         ]),
       ),
     );

@@ -6,7 +6,7 @@ Design screens are on [Dribble.](https://dribbble.com/shots/6139248-Game-Streami
 
 > **Disclaimer:** I am not in anyway in affiliate with the designer of the screens. I just love the UI and decided to do it in Flutter😽
 
-<a href="./app-release.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
+<a href="./build/app/outputs/apk/release/app-release.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
 
 Don't forget to star⭐ the repo if you like what you see. 😉
 
