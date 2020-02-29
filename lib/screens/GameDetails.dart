@@ -303,7 +303,9 @@ class GameDetails extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  print("tapped following...");
+                                },
                                 child: Container(
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 30, vertical: 10),
@@ -404,11 +406,15 @@ class GameDetailsSliverAppBar extends SliverPersistentHeaderDelegate {
         imagePath,
         fit: BoxFit.cover,
       ),
+      Positioned(
+          child: Opacity(
+              opacity: (1 - shrinkOffset / expandedHeight),
+              child: this.content)),
       Center(
           child: Opacity(
         opacity: shrinkOffset / expandedHeight,
         child: Container(
-            height: this.expandedHeight,
+            height: shrinkOffset * expandedHeight,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 color: Color(0xff010013).withAlpha(200),
@@ -442,11 +448,7 @@ class GameDetailsSliverAppBar extends SliverPersistentHeaderDelegate {
                 ),
               ],
             )),
-      )),
-      Positioned(
-          child: Opacity(
-              opacity: (1 - shrinkOffset / expandedHeight),
-              child: this.content))
+      ))
     ]);
   }
 }
