@@ -426,7 +426,7 @@ class GameDetailsSliverAppBar extends SliverPersistentHeaderDelegate {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    print("ass");
+                    print("popped page");
                     Navigator.of(context).pop();
                   },
                   child: Container(
