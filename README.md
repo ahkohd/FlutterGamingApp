@@ -12,7 +12,7 @@ Don't forget to star⭐ the repo if you like what you see. 😉
 
 # 🎥 Demo
 
-![demo](./demo.gif)
+<img src="./demo.gif" width="360"> | <img src="screenshots/2.png" width="300">
 
 # 📸 Screenshots
 
