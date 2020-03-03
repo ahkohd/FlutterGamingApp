@@ -12,7 +12,7 @@ Don't forget to star⭐ the repo if you like what you see. 😉
 
 # 🎥 Demo
 
-![demo](./gaming.gif)
+![demo](./demo.gif)
 
 # 📸 Screenshots
 
